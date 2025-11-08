@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi Tool Free - All-in-One Online Tools</title>
+    <title>Multi Tool Free - Premium Online Tools</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles */
@@ -15,6 +15,7 @@
             --card-bg: #3A3D5B;
             --hover-accent: #E6C200;
             --shadow: rgba(255, 215, 0, 0.2);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
         * {
@@ -35,100 +36,144 @@
             background-color: var(--header-bg);
             padding: 1.5rem 0;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             position: sticky;
             top: 0;
             z-index: 100;
         }
         
         .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2.8rem;
+            font-weight: 800;
             color: var(--accent-color);
             margin-bottom: 0.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            letter-spacing: 1px;
         }
         
         .tagline {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
+            letter-spacing: 0.5px;
+            font-weight: 400;
         }
         
         /* Main Content */
         main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 2rem;
         }
         
         .intro {
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background-color: rgba(58, 61, 91, 0.3);
-            border-radius: 10px;
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(58, 61, 91, 0.4), rgba(43, 45, 66, 0.4));
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--hover-accent));
         }
         
         .intro h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
             color: var(--accent-color);
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
         
         .intro p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 400;
         }
         
         .category-title {
-            font-size: 1.8rem;
-            margin: 2.5rem 0 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent-color);
+            font-size: 2rem;
+            margin: 3.5rem 0 2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--accent-color);
             color: var(--accent-color);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
         
         .category-title i {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
         
         /* Tool Grid */
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            gap: 2rem;
         }
         
         .tool-card {
             background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
             height: 100%;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-color), var(--hover-accent));
+            transform: scaleX(0);
+            transition: var(--transition);
+            transform-origin: left;
         }
         
         .tool-card:hover {
             background-color: var(--accent-color);
             color: var(--bg-color);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px var(--shadow);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px var(--shadow);
+        }
+        
+        .tool-card:hover::before {
+            transform: scaleX(1);
         }
         
         .tool-card h2 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
             color: var(--accent-color);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            font-weight: 600;
         }
         
         .tool-card:hover h2 {
@@ -137,135 +182,236 @@
         
         .tool-card p {
             flex-grow: 1;
-            margin-bottom: 1.2rem;
-            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 400;
         }
         
         .tool-btn {
             background-color: var(--accent-color);
             color: var(--bg-color);
             border: none;
-            padding: 0.7rem 1.2rem;
-            border-radius: 5px;
+            padding: 0.9rem 1.5rem;
+            border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: var(--transition);
             align-self: flex-start;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            letter-spacing: 0.5px;
         }
         
         .tool-card:hover .tool-btn {
             background-color: var(--hover-accent);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
         }
         
         /* Search Bar */
         .search-container {
-            max-width: 600px;
-            margin: 2rem auto;
+            max-width: 700px;
+            margin: 3rem auto;
             position: relative;
         }
         
         .search-bar {
             width: 100%;
-            padding: 1rem 1.5rem;
+            padding: 1.2rem 2rem;
             border-radius: 50px;
             border: none;
             background-color: var(--card-bg);
             color: var(--text-color);
-            font-size: 1rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1.1rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 215, 0, 0.1);
         }
         
         .search-bar:focus {
             outline: 2px solid var(--accent-color);
+            box-shadow: 0 8px 20px var(--shadow);
         }
         
         .search-bar::placeholder {
             color: #aaa;
         }
         
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 4rem 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(58, 61, 91, 0.4), rgba(43, 45, 66, 0.4));
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--hover-accent));
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--header-bg);
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 5rem;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
         
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
         }
         
         .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 2.2rem;
+            font-weight: 800;
             color: var(--accent-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
         
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin: 1.5rem 0;
+            gap: 2.5rem;
+            margin: 2rem 0;
         }
         
         .footer-links a {
             color: var(--text-color);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 1.1rem;
         }
         
         .footer-links a:hover {
             color: var(--accent-color);
+            transform: translateY(-3px);
         }
         
         .copyright {
             opacity: 0.7;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            margin-top: 2rem;
+            font-weight: 400;
         }
         
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .tools-grid {
+                gap: 1.5rem;
+            }
+            
+            .tool-card {
+                padding: 1.8rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .tools-grid {
                 grid-template-columns: 1fr;
             }
             
             .logo {
+                font-size: 2.2rem;
+            }
+            
+            .category-title {
+                font-size: 1.7rem;
+            }
+            
+            .intro h1 {
                 font-size: 2rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 2.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                padding: 0 1.2rem;
+            }
+            
+            .tool-card {
+                padding: 1.5rem;
+                border-radius: 12px;
+            }
+            
+            .tool-card h2 {
+                font-size: 1.2rem;
+            }
+            
+            .tool-btn {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.95rem;
+                border-radius: 8px;
+            }
+            
+            .intro {
+                padding: 2rem;
+            }
+            
+            .search-bar {
+                padding: 1rem 1.5rem;
             }
             
             .category-title {
                 font-size: 1.5rem;
             }
             
-            .intro h1 {
+            .logo {
                 font-size: 1.8rem;
             }
             
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .tool-card {
-                padding: 1rem;
-            }
-            
-            .tool-card h2 {
-                font-size: 1.1rem;
-            }
-            
-            .tool-btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .intro {
-                padding: 1.5rem;
+            .tagline {
+                font-size: 1rem;
             }
         }
     </style>
@@ -273,14 +419,33 @@
 <body>
     <header>
         <div class="logo">Multi Tool Free</div>
-        <p class="tagline">All-in-one online tools for PDF, image, video, audio, and file processing - completely free!</p>
+        <p class="tagline">Premium online tools for PDF, image, video, audio, and file processing - completely free!</p>
     </header>
     
     <main>
         <section class="intro">
-            <h1>Your All-in-One Free Toolbox</h1>
-            <p>Access over 80 powerful online tools for document conversion, media editing, financial calculations, and more. No registration required - completely free!</p>
+            <h1>Your Premium All-in-One Toolbox</h1>
+            <p>Access over 80 powerful online tools for document conversion, media editing, financial calculations, and more. Experience premium quality with no registration required.</p>
         </section>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">80+</div>
+                <div class="stat-label">Premium Tools</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Free Forever</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Available</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Registration</div>
+            </div>
+        </div>
         
         <div class="search-container">
             <input type="text" class="search-bar" placeholder="Search for tools...">
@@ -351,12 +516,12 @@
         <div class="footer-content">
             <div class="footer-logo">Multi Tool Free</div>
             <div class="footer-links">
-                <a href="#">About Us</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact</a>
+                <a href="#"><i class="fas fa-info-circle"></i> About Us</a>
+                <a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                <a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
             </div>
-            <p class="copyright">© 2023 Multi Tool Free. All rights reserved.</p>
+            <p class="copyright">© 2023 Multi Tool Free. All rights reserved. Premium tools, completely free.</p>
         </div>
     </footer>
     
@@ -440,12 +605,7 @@
                 { name: "Home Loan Calculator", description: "Calculate home loan EMIs and interest.", icon: "fas fa-home" },
                 { name: "Car Loan Calculator", description: "Calculate car loan EMIs and interest.", icon: "fas fa-car" },
                 { name: "RD Calculator", description: "Calculate returns on recurring deposits.", icon: "fas fa-calendar-plus" },
-                { name: "NPS Calculator", description: "Calculate National Pension Scheme returns.", icon: "fas fa-user-tie" },
-                { name: "Retirement Calculator", description: "Plan and calculate retirement savings needs.", icon: "fas fa-umbrella-beach" },
-                { name: "Tax Calculator", description: "Calculate income tax liabilities.", icon: "fas fa-file-invoice-dollar" },
-                { name: "Income Tax Estimator", description: "Estimate income tax for the financial year.", icon: "fas fa-calculator" },
-                { name: "Salary Calculator", description: "Calculate take-home salary after deductions.", icon: "fas fa-money-check" },
-                { name: "Investment Return Calculator", description: "Calculate returns on various investments.", icon: "fas fa-chart-bar" }
+                { name: "NPS Calculator", description: "Calculate National Pension Scheme returns.", icon: "fas fa-user-tie" }
             ],
             "health-tools": [
                 { name: "BMI Calculator", description: "Calculate Body Mass Index based on height and weight.", icon: "fas fa-weight" },
