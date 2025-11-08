@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi Tool Free - All-in-One Online Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles */
         :root {
@@ -61,12 +62,39 @@
             padding: 0 1.5rem;
         }
         
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: rgba(58, 61, 91, 0.3);
+            border-radius: 10px;
+        }
+        
+        .intro h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .intro p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
         .category-title {
             font-size: 1.8rem;
             margin: 2.5rem 0 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--accent-color);
             color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category-title i {
+            font-size: 1.5rem;
         }
         
         /* Tool Grid */
@@ -98,6 +126,9 @@
             font-size: 1.3rem;
             margin-bottom: 0.8rem;
             color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .tool-card:hover h2 {
@@ -126,6 +157,32 @@
             background-color: var(--hover-accent);
         }
         
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            position: relative;
+        }
+        
+        .search-bar {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-bar:focus {
+            outline: 2px solid var(--accent-color);
+        }
+        
+        .search-bar::placeholder {
+            color: #aaa;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--header-bg);
@@ -147,6 +204,23 @@
             margin-bottom: 1rem;
         }
         
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
         .copyright {
             opacity: 0.7;
             font-size: 0.9rem;
@@ -165,6 +239,15 @@
             .category-title {
                 font-size: 1.5rem;
             }
+            
+            .intro h1 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -180,6 +263,10 @@
                 padding: 0.6rem 1rem;
                 font-size: 0.9rem;
             }
+            
+            .intro {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -190,62 +277,71 @@
     </header>
     
     <main>
-        <h1 class="category-title">PDF Tools</h1>
+        <section class="intro">
+            <h1>Your All-in-One Free Toolbox</h1>
+            <p>Access over 80 powerful online tools for document conversion, media editing, financial calculations, and more. No registration required - completely free!</p>
+        </section>
+        
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search for tools...">
+        </div>
+        
+        <h1 class="category-title"><i class="fas fa-file-pdf"></i> PDF Tools</h1>
         <div class="tools-grid" id="pdf-tools">
             <!-- PDF tools will be populated by JavaScript -->
         </div>
         
-        <h1 class="category-title">Image Tools</h1>
+        <h1 class="category-title"><i class="fas fa-image"></i> Image Tools</h1>
         <div class="tools-grid" id="image-tools">
             <!-- Image tools will be populated by JavaScript -->
         </div>
         
-        <h1 class="category-title">Video Tools</h1>
+        <h1 class="category-title"><i class="fas fa-video"></i> Video Tools</h1>
         <div class="tools-grid" id="video-tools">
             <!-- Video tools will be populated by JavaScript -->
         </div>
         
-        <h1 class="category-title">Audio Tools</h1>
+        <h1 class="category-title"><i class="fas fa-music"></i> Audio Tools</h1>
         <div class="tools-grid" id="audio-tools">
             <!-- Audio tools will be populated by JavaScript -->
         </div>
         
-        <h1 class="category-title">File Tools</h1>
+        <h1 class="category-title"><i class="fas fa-file-archive"></i> File Tools</h1>
         <div class="tools-grid" id="file-tools">
             <!-- File tools will be populated by JavaScript -->
         </div>
         
-        <h1 class="category-title">Converter Tools</h1>
+        <h1 class="category-title"><i class="fas fa-exchange-alt"></i> Converter Tools</h1>
         <div class="tools-grid" id="converter-tools">
             <!-- Converter tools will be populated by JavaScript -->
         </div>
         
-        <h1 class="category-title">Financial Calculators</h1>
+        <h1 class="category-title"><i class="fas fa-calculator"></i> Financial Calculators</h1>
         <div class="tools-grid" id="financial-tools">
             <!-- Financial tools will be populated by JavaScript -->
         </div>
         
-        <h1 class="category-title">Health Calculators</h1>
+        <h1 class="category-title"><i class="fas fa-heartbeat"></i> Health Calculators</h1>
         <div class="tools-grid" id="health-tools">
             <!-- Health tools will be populated by JavaScript -->
         </div>
         
-        <h1 class="category-title">Text Tools</h1>
+        <h1 class="category-title"><i class="fas fa-font"></i> Text Tools</h1>
         <div class="tools-grid" id="text-tools">
             <!-- Text tools will be populated by JavaScript -->
         </div>
         
-        <h1 class="category-title">Code Tools</h1>
+        <h1 class="category-title"><i class="fas fa-code"></i> Code Tools</h1>
         <div class="tools-grid" id="code-tools">
             <!-- Code tools will be populated by JavaScript -->
         </div>
         
-        <h1 class="category-title">SEO Tools</h1>
+        <h1 class="category-title"><i class="fas fa-search"></i> SEO Tools</h1>
         <div class="tools-grid" id="seo-tools">
             <!-- SEO tools will be populated by JavaScript -->
         </div>
         
-        <h1 class="category-title">Writing Tools</h1>
+        <h1 class="category-title"><i class="fas fa-pen-fancy"></i> Writing Tools</h1>
         <div class="tools-grid" id="writing-tools">
             <!-- Writing tools will be populated by JavaScript -->
         </div>
@@ -254,6 +350,12 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">Multi Tool Free</div>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
             <p class="copyright">© 2023 Multi Tool Free. All rights reserved.</p>
         </div>
     </footer>
@@ -262,126 +364,126 @@
         // Tool data organized by category
         const toolsData = {
             "pdf-tools": [
-                { name: "PDF to Word Converter", description: "Convert PDF documents to editable Word files with high accuracy." },
-                { name: "Word to PDF Converter", description: "Transform Word documents into PDF format while preserving formatting." },
-                { name: "PDF to Image Converter", description: "Convert PDF pages to high-quality image files (JPG, PNG, etc.)." },
-                { name: "Merge PDF Tool", description: "Combine multiple PDF files into a single document." },
-                { name: "Split PDF Tool", description: "Split PDF documents into separate files or extract specific pages." },
-                { name: "Compress PDF", description: "Reduce PDF file size without significant quality loss." },
-                { name: "Rotate PDF Pages", description: "Rotate PDF pages to correct orientation." },
-                { name: "Remove PDF Password", description: "Remove password protection from PDF files." },
-                { name: "Add Watermark to PDF", description: "Add text or image watermarks to PDF documents." },
-                { name: "PDF Page Number Adder", description: "Add page numbers to PDF documents with custom formatting." }
+                { name: "PDF to Word Converter", description: "Convert PDF documents to editable Word files with high accuracy.", icon: "fas fa-file-word" },
+                { name: "Word to PDF Converter", description: "Transform Word documents into PDF format while preserving formatting.", icon: "fas fa-file-pdf" },
+                { name: "PDF to Image Converter", description: "Convert PDF pages to high-quality image files (JPG, PNG, etc.).", icon: "fas fa-file-image" },
+                { name: "Merge PDF Tool", description: "Combine multiple PDF files into a single document.", icon: "fas fa-object-group" },
+                { name: "Split PDF Tool", description: "Split PDF documents into separate files or extract specific pages.", icon: "fas fa-cut" },
+                { name: "Compress PDF", description: "Reduce PDF file size without significant quality loss.", icon: "fas fa-compress" },
+                { name: "Rotate PDF Pages", description: "Rotate PDF pages to correct orientation.", icon: "fas fa-redo" },
+                { name: "Remove PDF Password", description: "Remove password protection from PDF files.", icon: "fas fa-unlock" },
+                { name: "Add Watermark to PDF", description: "Add text or image watermarks to PDF documents.", icon: "fas fa-tint" },
+                { name: "PDF Page Number Adder", description: "Add page numbers to PDF documents with custom formatting.", icon: "fas fa-sort-numeric-up" }
             ],
             "image-tools": [
-                { name: "Image Resizer", description: "Resize images to specific dimensions while maintaining quality." },
-                { name: "Image Rotator", description: "Rotate images to correct orientation." },
-                { name: "Image Background Remover", description: "Remove background from images automatically." },
-                { name: "Image Color Picker", description: "Extract color codes from any point in an image." },
-                { name: "Image Format Converter", description: "Convert between different image formats (JPG, PNG, WEBP, etc.)." },
-                { name: "Image Blur Tool", description: "Apply blur effects to images with adjustable intensity." },
-                { name: "Image Sharpen Tool", description: "Enhance image clarity and sharpness." },
-                { name: "Image Grayscale Converter", description: "Convert color images to grayscale/black and white." },
-                { name: "Image Watermark Adder", description: "Add text or logo watermarks to images." },
-                { name: "Image Metadata Viewer", description: "View and edit EXIF and other metadata in images." }
+                { name: "Image Resizer", description: "Resize images to specific dimensions while maintaining quality.", icon: "fas fa-expand" },
+                { name: "Image Rotator", description: "Rotate images to correct orientation.", icon: "fas fa-sync" },
+                { name: "Image Background Remover", description: "Remove background from images automatically.", icon: "fas fa-eraser" },
+                { name: "Image Color Picker", description: "Extract color codes from any point in an image.", icon: "fas fa-eye-dropper" },
+                { name: "Image Format Converter", description: "Convert between different image formats (JPG, PNG, WEBP, etc.).", icon: "fas fa-exchange-alt" },
+                { name: "Image Blur Tool", description: "Apply blur effects to images with adjustable intensity.", icon: "fas fa-blur" },
+                { name: "Image Sharpen Tool", description: "Enhance image clarity and sharpness.", icon: "fas fa-bolt" },
+                { name: "Image Grayscale Converter", description: "Convert color images to grayscale/black and white.", icon: "fas fa-adjust" },
+                { name: "Image Watermark Adder", description: "Add text or logo watermarks to images.", icon: "fas fa-copyright" },
+                { name: "Image Metadata Viewer", description: "View and edit EXIF and other metadata in images.", icon: "fas fa-info-circle" }
             ],
             "video-tools": [
-                { name: "Video Compressor", description: "Reduce video file size while maintaining quality." },
-                { name: "Video to Audio Converter", description: "Extract audio from video files in various formats." },
-                { name: "Video Cutter / Trimmer", description: "Cut and trim video clips to desired length." },
-                { name: "Video Merger", description: "Combine multiple video files into one." },
-                { name: "Video Rotator", description: "Rotate videos to correct orientation." },
-                { name: "Video to GIF Converter", description: "Convert video clips to animated GIFs." },
-                { name: "Add Subtitles to Video", description: "Add custom subtitles to video files." },
-                { name: "Remove Audio from Video", description: "Strip audio track from video files." },
-                { name: "Add Watermark to Video", description: "Add text or image watermarks to videos." },
-                { name: "Video Speed Controller", description: "Adjust playback speed of video files." }
+                { name: "Video Compressor", description: "Reduce video file size while maintaining quality.", icon: "fas fa-compress" },
+                { name: "Video to Audio Converter", description: "Extract audio from video files in various formats.", icon: "fas fa-file-audio" },
+                { name: "Video Cutter / Trimmer", description: "Cut and trim video clips to desired length.", icon: "fas fa-cut" },
+                { name: "Video Merger", description: "Combine multiple video files into one.", icon: "fas fa-object-group" },
+                { name: "Video Rotator", description: "Rotate videos to correct orientation.", icon: "fas fa-redo" },
+                { name: "Video to GIF Converter", description: "Convert video clips to animated GIFs.", icon: "fas fa-film" },
+                { name: "Add Subtitles to Video", description: "Add custom subtitles to video files.", icon: "fas fa-closed-captioning" },
+                { name: "Remove Audio from Video", description: "Strip audio track from video files.", icon: "fas fa-volume-mute" },
+                { name: "Add Watermark to Video", description: "Add text or image watermarks to videos.", icon: "fas fa-tint" },
+                { name: "Video Speed Controller", description: "Adjust playback speed of video files.", icon: "fas fa-tachometer-alt" }
             ],
             "audio-tools": [
-                { name: "Audio Converter", description: "Convert between different audio formats (MP3, WAV, FLAC, etc.)." },
-                { name: "Audio Cutter / Trimmer", description: "Cut and trim audio files to desired length." },
-                { name: "Audio Merger", description: "Combine multiple audio files into one." },
-                { name: "Audio Volume Booster", description: "Increase volume of audio files without distortion." },
-                { name: "Audio to Text (Speech to Text)", description: "Transcribe audio files to text automatically." },
-                { name: "Text to Speech Converter", description: "Convert written text to natural-sounding speech." },
-                { name: "Voice Changer Tool", description: "Modify voice in audio files with various effects." },
-                { name: "Noise Remover (Audio Cleaner)", description: "Remove background noise from audio recordings." },
-                { name: "MP3 Tag Editor", description: "Edit metadata and tags of MP3 files." },
-                { name: "Audio Format Normalizer", description: "Standardize audio levels across files." }
+                { name: "Audio Converter", description: "Convert between different audio formats (MP3, WAV, FLAC, etc.).", icon: "fas fa-exchange-alt" },
+                { name: "Audio Cutter / Trimmer", description: "Cut and trim audio files to desired length.", icon: "fas fa-cut" },
+                { name: "Audio Merger", description: "Combine multiple audio files into one.", icon: "fas fa-object-group" },
+                { name: "Audio Volume Booster", description: "Increase volume of audio files without distortion.", icon: "fas fa-volume-up" },
+                { name: "Audio to Text (Speech to Text)", description: "Transcribe audio files to text automatically.", icon: "fas fa-keyboard" },
+                { name: "Text to Speech Converter", description: "Convert written text to natural-sounding speech.", icon: "fas fa-microphone" },
+                { name: "Voice Changer Tool", description: "Modify voice in audio files with various effects.", icon: "fas fa-user" },
+                { name: "Noise Remover (Audio Cleaner)", description: "Remove background noise from audio recordings.", icon: "fas fa-broom" },
+                { name: "MP3 Tag Editor", description: "Edit metadata and tags of MP3 files.", icon: "fas fa-tag" },
+                { name: "Audio Format Normalizer", description: "Standardize audio levels across files.", icon: "fas fa-sliders-h" }
             ],
             "file-tools": [
-                { name: "File Converter (Universal)", description: "Convert between various file formats." },
-                { name: "ZIP File Extractor", description: "Extract files from ZIP archives." },
-                { name: "RAR File Extractor", description: "Extract files from RAR archives." },
-                { name: "File Compressor (ZIP, 7z)", description: "Compress files and folders into archives." },
-                { name: "File Splitter", description: "Split large files into smaller parts." },
-                { name: "File Merger", description: "Merge split file parts back together." },
-                { name: "Base64 Encoder / Decoder", description: "Encode and decode files or text in Base64 format." },
-                { name: "QR Code Generator", description: "Create custom QR codes for URLs, text, and more." },
-                { name: "Barcode Generator", description: "Generate various barcode types." },
-                { name: "QR Code Scanner", description: "Scan QR codes from images or camera." }
+                { name: "File Converter (Universal)", description: "Convert between various file formats.", icon: "fas fa-exchange-alt" },
+                { name: "ZIP File Extractor", description: "Extract files from ZIP archives.", icon: "fas fa-file-archive" },
+                { name: "RAR File Extractor", description: "Extract files from RAR archives.", icon: "fas fa-file-archive" },
+                { name: "File Compressor (ZIP, 7z)", description: "Compress files and folders into archives.", icon: "fas fa-compress" },
+                { name: "File Splitter", description: "Split large files into smaller parts.", icon: "fas fa-cut" },
+                { name: "File Merger", description: "Merge split file parts back together.", icon: "fas fa-object-group" },
+                { name: "Base64 Encoder / Decoder", description: "Encode and decode files or text in Base64 format.", icon: "fas fa-code" },
+                { name: "QR Code Generator", description: "Create custom QR codes for URLs, text, and more.", icon: "fas fa-qrcode" },
+                { name: "Barcode Generator", description: "Generate various barcode types.", icon: "fas fa-barcode" },
+                { name: "QR Code Scanner", description: "Scan QR codes from images or camera.", icon: "fas fa-camera" }
             ],
             "converter-tools": [
-                { name: "Unit Converter (Length, Weight, etc.)", description: "Convert between different units of measurement." },
-                { name: "Currency Converter", description: "Convert between world currencies with live rates." },
-                { name: "Temperature Converter", description: "Convert between Celsius, Fahrenheit, and Kelvin." },
-                { name: "Time Zone Converter", description: "Convert time between different time zones." },
-                { name: "Date Difference Calculator", description: "Calculate the difference between two dates." }
+                { name: "Unit Converter (Length, Weight, etc.)", description: "Convert between different units of measurement.", icon: "fas fa-ruler" },
+                { name: "Currency Converter", description: "Convert between world currencies with live rates.", icon: "fas fa-money-bill-wave" },
+                { name: "Temperature Converter", description: "Convert between Celsius, Fahrenheit, and Kelvin.", icon: "fas fa-thermometer-half" },
+                { name: "Time Zone Converter", description: "Convert time between different time zones.", icon: "fas fa-globe" },
+                { name: "Date Difference Calculator", description: "Calculate the difference between two dates.", icon: "fas fa-calendar-alt" }
             ],
             "financial-tools": [
-                { name: "Percentage Calculator", description: "Calculate percentages, increases, and decreases." },
-                { name: "Discount Calculator", description: "Calculate discounts and final prices." },
-                { name: "GST Calculator", description: "Calculate GST amounts and totals." },
-                { name: "Compound Interest Calculator", description: "Calculate compound interest on investments." },
-                { name: "FD Calculator", description: "Calculate returns on fixed deposits." },
-                { name: "Loan Eligibility Calculator", description: "Check eligibility for various loans." },
-                { name: "Home Loan Calculator", description: "Calculate home loan EMIs and interest." },
-                { name: "Car Loan Calculator", description: "Calculate car loan EMIs and interest." },
-                { name: "RD Calculator", description: "Calculate returns on recurring deposits." },
-                { name: "NPS Calculator", description: "Calculate National Pension Scheme returns." },
-                { name: "Retirement Calculator", description: "Plan and calculate retirement savings needs." },
-                { name: "Tax Calculator", description: "Calculate income tax liabilities." },
-                { name: "Income Tax Estimator", description: "Estimate income tax for the financial year." },
-                { name: "Salary Calculator", description: "Calculate take-home salary after deductions." },
-                { name: "Investment Return Calculator", description: "Calculate returns on various investments." }
+                { name: "Percentage Calculator", description: "Calculate percentages, increases, and decreases.", icon: "fas fa-percentage" },
+                { name: "Discount Calculator", description: "Calculate discounts and final prices.", icon: "fas fa-tag" },
+                { name: "GST Calculator", description: "Calculate GST amounts and totals.", icon: "fas fa-receipt" },
+                { name: "Compound Interest Calculator", description: "Calculate compound interest on investments.", icon: "fas fa-chart-line" },
+                { name: "FD Calculator", description: "Calculate returns on fixed deposits.", icon: "fas fa-piggy-bank" },
+                { name: "Loan Eligibility Calculator", description: "Check eligibility for various loans.", icon: "fas fa-hand-holding-usd" },
+                { name: "Home Loan Calculator", description: "Calculate home loan EMIs and interest.", icon: "fas fa-home" },
+                { name: "Car Loan Calculator", description: "Calculate car loan EMIs and interest.", icon: "fas fa-car" },
+                { name: "RD Calculator", description: "Calculate returns on recurring deposits.", icon: "fas fa-calendar-plus" },
+                { name: "NPS Calculator", description: "Calculate National Pension Scheme returns.", icon: "fas fa-user-tie" },
+                { name: "Retirement Calculator", description: "Plan and calculate retirement savings needs.", icon: "fas fa-umbrella-beach" },
+                { name: "Tax Calculator", description: "Calculate income tax liabilities.", icon: "fas fa-file-invoice-dollar" },
+                { name: "Income Tax Estimator", description: "Estimate income tax for the financial year.", icon: "fas fa-calculator" },
+                { name: "Salary Calculator", description: "Calculate take-home salary after deductions.", icon: "fas fa-money-check" },
+                { name: "Investment Return Calculator", description: "Calculate returns on various investments.", icon: "fas fa-chart-bar" }
             ],
             "health-tools": [
-                { name: "BMI Calculator", description: "Calculate Body Mass Index based on height and weight." },
-                { name: "BMR Calculator", description: "Calculate Basal Metabolic Rate for calorie needs." },
-                { name: "Calorie Calculator", description: "Calculate daily calorie requirements." },
-                { name: "Body Fat Calculator", description: "Estimate body fat percentage." },
-                { name: "Ideal Weight Calculator", description: "Calculate healthy weight range based on height." },
-                { name: "Heart Rate Calculator", description: "Calculate target heart rate zones for exercise." },
-                { name: "Pregnancy Due Date Calculator", description: "Estimate pregnancy due date from last period." },
-                { name: "Ovulation Calculator", description: "Track ovulation and fertile days." },
-                { name: "Water Intake Calculator", description: "Calculate recommended daily water intake." },
-                { name: "Step Counter Estimator", description: "Estimate steps and calories burned." }
+                { name: "BMI Calculator", description: "Calculate Body Mass Index based on height and weight.", icon: "fas fa-weight" },
+                { name: "BMR Calculator", description: "Calculate Basal Metabolic Rate for calorie needs.", icon: "fas fa-fire" },
+                { name: "Calorie Calculator", description: "Calculate daily calorie requirements.", icon: "fas fa-apple-alt" },
+                { name: "Body Fat Calculator", description: "Estimate body fat percentage.", icon: "fas fa-user" },
+                { name: "Ideal Weight Calculator", description: "Calculate healthy weight range based on height.", icon: "fas fa-balance-scale" },
+                { name: "Heart Rate Calculator", description: "Calculate target heart rate zones for exercise.", icon: "fas fa-heart" },
+                { name: "Pregnancy Due Date Calculator", description: "Estimate pregnancy due date from last period.", icon: "fas fa-baby" },
+                { name: "Ovulation Calculator", description: "Track ovulation and fertile days.", icon: "fas fa-calendar-check" },
+                { name: "Water Intake Calculator", description: "Calculate recommended daily water intake.", icon: "fas fa-tint" },
+                { name: "Step Counter Estimator", description: "Estimate steps and calories burned.", icon: "fas fa-walking" }
             ],
             "text-tools": [
-                { name: "Text Case Converter (Upper/Lower)", description: "Convert text between uppercase, lowercase, and title case." },
-                { name: "Word Counter", description: "Count words, characters, and sentences in text." },
-                { name: "Character Counter", description: "Count characters with and without spaces." },
-                { name: "Remove Extra Spaces Tool", description: "Clean text by removing extra spaces." },
-                { name: "JSON Formatter", description: "Format and validate JSON data." },
-                { name: "XML Formatter", description: "Format and validate XML data." },
-                { name: "HTML Minifier", description: "Minify HTML code by removing unnecessary characters." },
-                { name: "CSS Minifier", description: "Minify CSS code for faster loading." },
-                { name: "JavaScript Beautifier", description: "Format and beautify JavaScript code." },
-                { name: "Code Diff Checker", description: "Compare and find differences between code snippets." }
+                { name: "Text Case Converter (Upper/Lower)", description: "Convert text between uppercase, lowercase, and title case.", icon: "fas fa-text-height" },
+                { name: "Word Counter", description: "Count words, characters, and sentences in text.", icon: "fas fa-font" },
+                { name: "Character Counter", description: "Count characters with and without spaces.", icon: "fas fa-sort-alpha-down" },
+                { name: "Remove Extra Spaces Tool", description: "Clean text by removing extra spaces.", icon: "fas fa-eraser" },
+                { name: "JSON Formatter", description: "Format and validate JSON data.", icon: "fas fa-code" },
+                { name: "XML Formatter", description: "Format and validate XML data.", icon: "fas fa-code" },
+                { name: "HTML Minifier", description: "Minify HTML code by removing unnecessary characters.", icon: "fas fa-file-code" },
+                { name: "CSS Minifier", description: "Minify CSS code for faster loading.", icon: "fas fa-css3" },
+                { name: "JavaScript Beautifier", description: "Format and beautify JavaScript code.", icon: "fas fa-js-square" },
+                { name: "Code Diff Checker", description: "Compare and find differences between code snippets.", icon: "fas fa-code-branch" }
             ],
             "seo-tools": [
-                { name: "Domain Age Checker", description: "Check the age and registration details of a domain." },
-                { name: "Website Speed Tester", description: "Test website loading speed and performance." },
-                { name: "Broken Link Checker", description: "Find broken links on a website." },
-                { name: "Meta Tag Analyzer", description: "Analyze and check meta tags of web pages." },
-                { name: "Keyword Density Checker", description: "Analyze keyword density in web content." }
+                { name: "Domain Age Checker", description: "Check the age and registration details of a domain.", icon: "fas fa-calendar" },
+                { name: "Website Speed Tester", description: "Test website loading speed and performance.", icon: "fas fa-tachometer-alt" },
+                { name: "Broken Link Checker", description: "Find broken links on a website.", icon: "fas fa-unlink" },
+                { name: "Meta Tag Analyzer", description: "Analyze and check meta tags of web pages.", icon: "fas fa-tags" },
+                { name: "Keyword Density Checker", description: "Analyze keyword density in web content.", icon: "fas fa-search" }
             ],
             "writing-tools": [
-                { name: "Plagiarism Checker", description: "Check text for duplicate content and plagiarism." },
-                { name: "Grammar Checker", description: "Check and correct grammar mistakes in text." },
-                { name: "Paraphrasing Tool", description: "Rephrase and rewrite text while preserving meaning." },
-                { name: "Text Summarizer", description: "Summarize long texts into key points." },
-                { name: "Text Translator", description: "Translate text between multiple languages." }
+                { name: "Plagiarism Checker", description: "Check text for duplicate content and plagiarism.", icon: "fas fa-copy" },
+                { name: "Grammar Checker", description: "Check and correct grammar mistakes in text.", icon: "fas fa-spell-check" },
+                { name: "Paraphrasing Tool", description: "Rephrase and rewrite text while preserving meaning.", icon: "fas fa-paragraph" },
+                { name: "Text Summarizer", description: "Summarize long texts into key points.", icon: "fas fa-file-contract" },
+                { name: "Text Translator", description: "Translate text between multiple languages.", icon: "fas fa-language" }
             ]
         };
 
@@ -395,7 +497,7 @@
                         toolCard.className = 'tool-card';
                         
                         toolCard.innerHTML = `
-                            <h2>${tool.name}</h2>
+                            <h2><i class="${tool.icon}"></i> ${tool.name}</h2>
                             <p>${tool.description}</p>
                             <button class="tool-btn">Use Tool</button>
                         `;
