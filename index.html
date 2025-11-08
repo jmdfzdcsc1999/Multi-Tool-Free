@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Tool Free - All-in-One Online Tools</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --bg-color: #1E1E2F;
+            --text-color: #EAEAEA;
+            --header-bg: #2B2D42;
+            --accent-color: #FFD700;
+            --card-bg: #3A3D5B;
+            --hover-accent: #E6C200;
+            --shadow: rgba(255, 215, 0, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--header-bg);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        /* Tool Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .tool-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .tool-card:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--shadow);
+        }
+        
+        .tool-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent-color);
+        }
+        
+        .tool-card:hover h2 {
+            color: var(--bg-color);
+        }
+        
+        .tool-card p {
+            flex-grow: 1;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .tool-btn {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            align-self: flex-start;
+        }
+        
+        .tool-card:hover .tool-btn {
+            background-color: var(--hover-accent);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--header-bg);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tool-card {
+                padding: 1rem;
+            }
+            
+            .tool-card h2 {
+                font-size: 1.1rem;
+            }
+            
+            .tool-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Multi Tool Free</div>
+        <p class="tagline">All-in-one online tools for PDF, image, video, audio, and file processing - completely free!</p>
+    </header>
+    
+    <main>
+        <h1 class="category-title">PDF Tools</h1>
+        <div class="tools-grid" id="pdf-tools">
+            <!-- PDF tools will be populated by JavaScript -->
+        </div>
+        
+        <h1 class="category-title">Image Tools</h1>
+        <div class="tools-grid" id="image-tools">
+            <!-- Image tools will be populated by JavaScript -->
+        </div>
+        
+        <h1 class="category-title">Video Tools</h1>
+        <div class="tools-grid" id="video-tools">
+            <!-- Video tools will be populated by JavaScript -->
+        </div>
+        
+        <h1 class="category-title">Audio Tools</h1>
+        <div class="tools-grid" id="audio-tools">
+            <!-- Audio tools will be populated by JavaScript -->
+        </div>
+        
+        <h1 class="category-title">File Tools</h1>
+        <div class="tools-grid" id="file-tools">
+            <!-- File tools will be populated by JavaScript -->
+        </div>
+        
+        <h1 class="category-title">Converter Tools</h1>
+        <div class="tools-grid" id="converter-tools">
+            <!-- Converter tools will be populated by JavaScript -->
+        </div>
+        
+        <h1 class="category-title">Financial Calculators</h1>
+        <div class="tools-grid" id="financial-tools">
+            <!-- Financial tools will be populated by JavaScript -->
+        </div>
+        
+        <h1 class="category-title">Health Calculators</h1>
+        <div class="tools-grid" id="health-tools">
+            <!-- Health tools will be populated by JavaScript -->
+        </div>
+        
+        <h1 class="category-title">Text Tools</h1>
+        <div class="tools-grid" id="text-tools">
+            <!-- Text tools will be populated by JavaScript -->
+        </div>
+        
+        <h1 class="category-title">Code Tools</h1>
+        <div class="tools-grid" id="code-tools">
+            <!-- Code tools will be populated by JavaScript -->
+        </div>
+        
+        <h1 class="category-title">SEO Tools</h1>
+        <div class="tools-grid" id="seo-tools">
+            <!-- SEO tools will be populated by JavaScript -->
+        </div>
+        
+        <h1 class="category-title">Writing Tools</h1>
+        <div class="tools-grid" id="writing-tools">
+            <!-- Writing tools will be populated by JavaScript -->
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Multi Tool Free</div>
+            <p class="copyright">© 2023 Multi Tool Free. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Tool data organized by category
+        const toolsData = {
+            "pdf-tools": [
+                { name: "PDF to Word Converter", description: "Convert PDF documents to editable Word files with high accuracy." },
+                { name: "Word to PDF Converter", description: "Transform Word documents into PDF format while preserving formatting." },
+                { name: "PDF to Image Converter", description: "Convert PDF pages to high-quality image files (JPG, PNG, etc.)." },
+                { name: "Merge PDF Tool", description: "Combine multiple PDF files into a single document." },
+                { name: "Split PDF Tool", description: "Split PDF documents into separate files or extract specific pages." },
+                { name: "Compress PDF", description: "Reduce PDF file size without significant quality loss." },
+                { name: "Rotate PDF Pages", description: "Rotate PDF pages to correct orientation." },
+                { name: "Remove PDF Password", description: "Remove password protection from PDF files." },
+                { name: "Add Watermark to PDF", description: "Add text or image watermarks to PDF documents." },
+                { name: "PDF Page Number Adder", description: "Add page numbers to PDF documents with custom formatting." }
+            ],
+            "image-tools": [
+                { name: "Image Resizer", description: "Resize images to specific dimensions while maintaining quality." },
+                { name: "Image Rotator", description: "Rotate images to correct orientation." },
+                { name: "Image Background Remover", description: "Remove background from images automatically." },
+                { name: "Image Color Picker", description: "Extract color codes from any point in an image." },
+                { name: "Image Format Converter", description: "Convert between different image formats (JPG, PNG, WEBP, etc.)." },
+                { name: "Image Blur Tool", description: "Apply blur effects to images with adjustable intensity." },
+                { name: "Image Sharpen Tool", description: "Enhance image clarity and sharpness." },
+                { name: "Image Grayscale Converter", description: "Convert color images to grayscale/black and white." },
+                { name: "Image Watermark Adder", description: "Add text or logo watermarks to images." },
+                { name: "Image Metadata Viewer", description: "View and edit EXIF and other metadata in images." }
+            ],
+            "video-tools": [
+                { name: "Video Compressor", description: "Reduce video file size while maintaining quality." },
+                { name: "Video to Audio Converter", description: "Extract audio from video files in various formats." },
+                { name: "Video Cutter / Trimmer", description: "Cut and trim video clips to desired length." },
+                { name: "Video Merger", description: "Combine multiple video files into one." },
+                { name: "Video Rotator", description: "Rotate videos to correct orientation." },
+                { name: "Video to GIF Converter", description: "Convert video clips to animated GIFs." },
+                { name: "Add Subtitles to Video", description: "Add custom subtitles to video files." },
+                { name: "Remove Audio from Video", description: "Strip audio track from video files." },
+                { name: "Add Watermark to Video", description: "Add text or image watermarks to videos." },
+                { name: "Video Speed Controller", description: "Adjust playback speed of video files." }
+            ],
+            "audio-tools": [
+                { name: "Audio Converter", description: "Convert between different audio formats (MP3, WAV, FLAC, etc.)." },
+                { name: "Audio Cutter / Trimmer", description: "Cut and trim audio files to desired length." },
+                { name: "Audio Merger", description: "Combine multiple audio files into one." },
+                { name: "Audio Volume Booster", description: "Increase volume of audio files without distortion." },
+                { name: "Audio to Text (Speech to Text)", description: "Transcribe audio files to text automatically." },
+                { name: "Text to Speech Converter", description: "Convert written text to natural-sounding speech." },
+                { name: "Voice Changer Tool", description: "Modify voice in audio files with various effects." },
+                { name: "Noise Remover (Audio Cleaner)", description: "Remove background noise from audio recordings." },
+                { name: "MP3 Tag Editor", description: "Edit metadata and tags of MP3 files." },
+                { name: "Audio Format Normalizer", description: "Standardize audio levels across files." }
+            ],
+            "file-tools": [
+                { name: "File Converter (Universal)", description: "Convert between various file formats." },
+                { name: "ZIP File Extractor", description: "Extract files from ZIP archives." },
+                { name: "RAR File Extractor", description: "Extract files from RAR archives." },
+                { name: "File Compressor (ZIP, 7z)", description: "Compress files and folders into archives." },
+                { name: "File Splitter", description: "Split large files into smaller parts." },
+                { name: "File Merger", description: "Merge split file parts back together." },
+                { name: "Base64 Encoder / Decoder", description: "Encode and decode files or text in Base64 format." },
+                { name: "QR Code Generator", description: "Create custom QR codes for URLs, text, and more." },
+                { name: "Barcode Generator", description: "Generate various barcode types." },
+                { name: "QR Code Scanner", description: "Scan QR codes from images or camera." }
+            ],
+            "converter-tools": [
+                { name: "Unit Converter (Length, Weight, etc.)", description: "Convert between different units of measurement." },
+                { name: "Currency Converter", description: "Convert between world currencies with live rates." },
+                { name: "Temperature Converter", description: "Convert between Celsius, Fahrenheit, and Kelvin." },
+                { name: "Time Zone Converter", description: "Convert time between different time zones." },
+                { name: "Date Difference Calculator", description: "Calculate the difference between two dates." }
+            ],
+            "financial-tools": [
+                { name: "Percentage Calculator", description: "Calculate percentages, increases, and decreases." },
+                { name: "Discount Calculator", description: "Calculate discounts and final prices." },
+                { name: "GST Calculator", description: "Calculate GST amounts and totals." },
+                { name: "Compound Interest Calculator", description: "Calculate compound interest on investments." },
+                { name: "FD Calculator", description: "Calculate returns on fixed deposits." },
+                { name: "Loan Eligibility Calculator", description: "Check eligibility for various loans." },
+                { name: "Home Loan Calculator", description: "Calculate home loan EMIs and interest." },
+                { name: "Car Loan Calculator", description: "Calculate car loan EMIs and interest." },
+                { name: "RD Calculator", description: "Calculate returns on recurring deposits." },
+                { name: "NPS Calculator", description: "Calculate National Pension Scheme returns." },
+                { name: "Retirement Calculator", description: "Plan and calculate retirement savings needs." },
+                { name: "Tax Calculator", description: "Calculate income tax liabilities." },
+                { name: "Income Tax Estimator", description: "Estimate income tax for the financial year." },
+                { name: "Salary Calculator", description: "Calculate take-home salary after deductions." },
+                { name: "Investment Return Calculator", description: "Calculate returns on various investments." }
+            ],
+            "health-tools": [
+                { name: "BMI Calculator", description: "Calculate Body Mass Index based on height and weight." },
+                { name: "BMR Calculator", description: "Calculate Basal Metabolic Rate for calorie needs." },
+                { name: "Calorie Calculator", description: "Calculate daily calorie requirements." },
+                { name: "Body Fat Calculator", description: "Estimate body fat percentage." },
+                { name: "Ideal Weight Calculator", description: "Calculate healthy weight range based on height." },
+                { name: "Heart Rate Calculator", description: "Calculate target heart rate zones for exercise." },
+                { name: "Pregnancy Due Date Calculator", description: "Estimate pregnancy due date from last period." },
+                { name: "Ovulation Calculator", description: "Track ovulation and fertile days." },
+                { name: "Water Intake Calculator", description: "Calculate recommended daily water intake." },
+                { name: "Step Counter Estimator", description: "Estimate steps and calories burned." }
+            ],
+            "text-tools": [
+                { name: "Text Case Converter (Upper/Lower)", description: "Convert text between uppercase, lowercase, and title case." },
+                { name: "Word Counter", description: "Count words, characters, and sentences in text." },
+                { name: "Character Counter", description: "Count characters with and without spaces." },
+                { name: "Remove Extra Spaces Tool", description: "Clean text by removing extra spaces." },
+                { name: "JSON Formatter", description: "Format and validate JSON data." },
+                { name: "XML Formatter", description: "Format and validate XML data." },
+                { name: "HTML Minifier", description: "Minify HTML code by removing unnecessary characters." },
+                { name: "CSS Minifier", description: "Minify CSS code for faster loading." },
+                { name: "JavaScript Beautifier", description: "Format and beautify JavaScript code." },
+                { name: "Code Diff Checker", description: "Compare and find differences between code snippets." }
+            ],
+            "seo-tools": [
+                { name: "Domain Age Checker", description: "Check the age and registration details of a domain." },
+                { name: "Website Speed Tester", description: "Test website loading speed and performance." },
+                { name: "Broken Link Checker", description: "Find broken links on a website." },
+                { name: "Meta Tag Analyzer", description: "Analyze and check meta tags of web pages." },
+                { name: "Keyword Density Checker", description: "Analyze keyword density in web content." }
+            ],
+            "writing-tools": [
+                { name: "Plagiarism Checker", description: "Check text for duplicate content and plagiarism." },
+                { name: "Grammar Checker", description: "Check and correct grammar mistakes in text." },
+                { name: "Paraphrasing Tool", description: "Rephrase and rewrite text while preserving meaning." },
+                { name: "Text Summarizer", description: "Summarize long texts into key points." },
+                { name: "Text Translator", description: "Translate text between multiple languages." }
+            ]
+        };
+
+        // Function to create tool cards
+        function createToolCards() {
+            for (const category in toolsData) {
+                const container = document.getElementById(category);
+                if (container) {
+                    toolsData[category].forEach(tool => {
+                        const toolCard = document.createElement('div');
+                        toolCard.className = 'tool-card';
+                        
+                        toolCard.innerHTML = `
+                            <h2>${tool.name}</h2>
+                            <p>${tool.description}</p>
+                            <button class="tool-btn">Use Tool</button>
+                        `;
+                        
+                        // Add click event to button
+                        const button = toolCard.querySelector('.tool-btn');
+                        button.addEventListener('click', () => {
+                            alert(`Redirecting to ${tool.name}`);
+                        });
+                        
+                        container.appendChild(toolCard);
+                    });
+                }
+            }
+        }
+
+        // Initialize the page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', createToolCards);
+    </script>
+</body>
+</html>
